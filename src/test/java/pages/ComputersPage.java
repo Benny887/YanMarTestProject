@@ -7,7 +7,7 @@ import test.TestSearchLaptops;
 
 public class ComputersPage {
 
-    private final By laptopSelector = By.cssSelector("body > div._111XI.main > div:nth-child(5) > div > div > div:nth-child(2) > div > div:nth-child(2) > div > div > div > div.sxrtt.a6Vij > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > a");
+    private final By laptopXpath = By.xpath("//a[.='Ноутбуки']");
     private final WebDriver driver;
 
     public ComputersPage(WebDriver driver) {
@@ -15,7 +15,7 @@ public class ComputersPage {
     }
 
     public void chooseLaptop() {
-        TestSearchLaptops.getWebDriverWait().until(ExpectedConditions.textToBe(TestSearchLaptops.getMarketId(), TestSearchLaptops.getSiteTitleWord()));
-        driver.findElement(laptopSelector).click();
+        TestSearchLaptops.webDriverWait.until(ExpectedConditions.textToBe(TestSearchLaptops.MARKET_ID, TestSearchLaptops.SITE_TITLE_WORD));
+        driver.findElement(laptopXpath).click();
     }
 }
